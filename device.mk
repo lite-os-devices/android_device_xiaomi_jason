@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -325,6 +325,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
 
+# Hostapd
+		PRODUCT_COPY_FILES += \
+	  $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
+		$(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+		$(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
+
+PRODUCT_PACKAGES += \
+		move_wifi_data.sh
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
@@ -430,6 +439,9 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     android.hardware.media.omx@1.0-impl
+
+# Performance
+include vendor/qcom/common/qti-vendor.mk
 
 # Power
 PRODUCT_PACKAGES += \
