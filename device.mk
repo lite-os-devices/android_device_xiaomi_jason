@@ -264,6 +264,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData.system \
     libtinyxml
+	
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts	
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
